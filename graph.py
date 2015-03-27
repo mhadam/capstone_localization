@@ -12,8 +12,9 @@ for file in os.listdir("./logs"):
     
     f = os.path.join("./logs", file)
     r = np.genfromtxt(f, delimiter=',')
+    g = r[(r[:,3] == 2403) + (r[:,2] == 251)]
     
-    plt.plot(r[:,0], r[:,4])
+    plt.plot(g[:,0], g[:,4])
     name = os.path.splitext(file)[0]
     plt.savefig(name + '.png', bbox_inches='tight')
     plt.close('all')
