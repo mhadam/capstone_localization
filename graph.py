@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, sys
+import os, sys, time
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -12,7 +12,10 @@ for file in os.listdir("./logs"):
     
     f = os.path.join("./logs", file)
     r = np.genfromtxt(f, delimiter=',')
-    g = r[(r[:,3] == 2403) + (r[:,2] == 251)]
+    print(r)
+    
+    g = [row for row in r if (row[3] == 2403) and (row[2] == 251)]
+    g = np.array(g)
     
     plt.plot(g[:,0], g[:,4])
     name = os.path.splitext(file)[0]
