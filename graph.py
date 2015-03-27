@@ -14,7 +14,7 @@ for file in os.listdir("./logs"):
     r = np.genfromtxt(f, delimiter=',')
     print(r)
     
-    g = [row for row in r if (row[3] == 2403) and (row[2] == 251)]
+    g = [row for row in r if (row[3] == 2403) and (row[2] == 236)]
     g = np.array(g)
     
     plt.plot(g[:,0], g[:,4])
