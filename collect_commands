@@ -1,0 +1,11 @@
+## Commands to use in order to format and store the output of pip_sense
+
+sudo unbuffer ./pip_sense localhost 7007 |grep -P "ID:635.*TagID:(101|12)"
+
+sudo unbuffer ./pip_sense blah blah |grep -P "TagID:2\d\d\d"
+
+sudo unbuffer ./pip_sense blah blah | while read LINE; do echo $LINE | grep  "TagID:2[0-9][0-9][0-9]" ; done | tee 2160
+
+## You probably want to use this one
+
+sudo unbuffer ./pip_sense l l |  while read LINE; do echo "$LINE" | grep -P "TX:02003."; done | tee log.txt
