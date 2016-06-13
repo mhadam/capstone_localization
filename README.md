@@ -1,5 +1,5 @@
 # Sensor Localization project
-This is a collection of scripts written to processing data from several wireless sensors. The data can be used to localize certain sensors based on received signal strength indicators (RSSI).
+This is a collection of scripts for processing data from several wireless sensors. The project involved localizing certain sensors based on received signal strength indicators (RSSI). The only dependency is [numpy](http://www.numpy.org/).
 
 ## Scripts
 * graph.py: used for creating scatter plots of each data set.
